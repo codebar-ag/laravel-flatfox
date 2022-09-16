@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \CodebarAg\Flatfox\Flatfox
  *
-
  */
 class Flatfox extends Facade
 {
