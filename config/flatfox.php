@@ -2,7 +2,6 @@
 
 return [
 
-    'token' => env('FLATFOX_TOKEN'),
-    'public_listing_identifier' => env('FLATFOX_PUBLIC_LISTING_IDENTIFIER'),
-
+    'timeout' => env('FLATFOX_TIMEOUT', 15),
+    'caching' => env('FLATFOX_CACHING', 1),
 ];

@@ -45,7 +45,7 @@ class GetPublicListing extends Request implements Cacheable
     protected function defaultConfig(): array
     {
         return [
-            'timeout' => 15,
+            'timeout' => config('flatfox.caching', 15),
         ];
     }
 
@@ -56,6 +56,6 @@ class GetPublicListing extends Request implements Cacheable
 
     public function cacheExpiryInSeconds(): int
     {
-        return 1;
+        return config('flatfox.caching', 1);
     }
 }

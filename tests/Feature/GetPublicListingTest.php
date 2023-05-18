@@ -11,14 +11,13 @@ it('develop', function () {
     $forge = new FlatfoxConnector();
     $request = new GetPublicListing(142, '&expand=documents&expand=images');
     $response = $forge->send($request);
-
-    ray($response->json());
 })
-    ->group('get', 'public-listing');
+    ->group('get', 'public-listing')
+    ->skip();
 
 it('get public listing', function () {
     $mockClient = new MockClient([
         GetPublicListing::class => MockResponse::fixture('singleServer'),
     ]);
 })
-    ->group('get', 'public-listing')->todo();
+    ->group('get', 'public-listing')->skip();
