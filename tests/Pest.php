@@ -1,6 +1,6 @@
 <?php
 
-use CodebarAg\Zammad\Tests\TestCase;
+use CodebarAg\Flatfox\Tests\TestCase;
 use Illuminate\Support\Facades\Event;
 
 uses(TestCase::class)->in(__DIR__);
