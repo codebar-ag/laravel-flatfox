@@ -20,6 +20,8 @@ class Agency
 
     public static function fromJson(array $data): self
     {
+        $endpoint = trim(config('flatfox.endpoint', 'https://flatfox.ch'), '/');
+
         return new self(
             name: Arr::get($data, 'name'),
             name_2: Arr::get($data, 'name'),
@@ -27,8 +29,8 @@ class Agency
             zipcode: Arr::get($data, 'zipcode'),
             city: Arr::get($data, 'city'),
             country: Arr::get($data, 'country'),
-            logo_url: Arr::get($data, 'logo.url'),
-            logo_url_org_logo_m: Arr::get($data, 'logo.url_org_logo_m'),
+            logo_url: $endpoint.Arr::get($data, 'logo.url'),
+            logo_url_org_logo_m: $endpoint.Arr::get($data, 'logo.url_org_logo_m'),
         );
     }
 }

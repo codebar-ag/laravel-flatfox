@@ -4,19 +4,18 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-flatfox.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-flatfox)
 [![run-tests](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/run-tests.yml/badge.svg)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/run-tests.yml)
 [![PHPStan](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/phpstan.yml/badge.svg)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/phpstan.yml)
-[![Check & fix styling](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/php-cs-fixer.yml)
 
 This package was developed to give you a quick start to receive public listings from the Flatfox API.
 
 ## 💡 What is Flatfox?
 
-Flatfox is a web based portal whereh you can Search & advertise apartments for free.
+Flatfox is a web based portal where you can Search & advertise apartments for free.
 
 ## 🛠 Requirements
 
-| Package 	 | PHP 	  | Laravel 	        | Flatfox 	 |
-|-----------|--------|------------------|-----------|
-| >v1.0     | >8.2   | > Laravel 10.0   | ✅         |
+| Package 	 | PHP 	 | Laravel 	      | Flatfox 	 |
+|-----------|-------|----------------|-----------|
+| >v1.0     | >8.2  | > Laravel 10.0 | ✅         |
 
 ## ⚙️ Installation
 
@@ -31,6 +30,113 @@ composer require codebar-ag/laravel-flatfox
 ```php
     $request = new GetPublicListing(142, '&expand=documents&expand=images');
     $response = $request->send();
+    
+    $status = $request->status();
+    $dto = $request->dto(); 
+
+```
+
+## 🏋️ DTO showcase
+
+```php
+CodebarAg\Flatfox\DTO\Listing {
+  +pk: int|null
+  +slug: string|null
+  +url: array|null
+  +short_url: string|null
+  +submit_url: array|null
+  +status: string|null
+  +offer_type: string|null
+  +object_category: string|null
+  +object_type: string|null
+  +reference: string|null
+  +ref_property: string|null
+  +ref_house: string|null
+  +ref_object: string|null
+  +alternative_reference: string|null
+  +price_display: int|null
+  +price_display_type: string|null
+  +price_unit: string|null
+  +rent_net: int|null
+  +rent_charges: int|null
+  +rent_gross: int|null
+  +short_title: string|null
+  +public_title: string|null
+  +pitch_title: string|null
+  +description_title: string|null
+  +description: string|null
+  +surface_living: int|null
+  +surface_property: int|null
+  +surface_usable: int|null
+  +surface_usable_minimum: int|null
+  +volume: int|null
+  +space_display: int|null
+  +number_of_rooms: string|null
+  +floor: int|null
+  +attributes: Collection DTO/Attribute|null
+  +is_furnished: boolean|null
+  +is_temporary: boolean|null
+  +is_selling_furniture: boolean|null
+  +street: string|null
+  +zipcode: int|null
+  +city: string|null
+  +public_address: string|null
+  +latitude: float|null
+  +longitude: float|null
+  +year_built: int|null
+  +year_renovated: int|null
+  +moving_date_type: string|null
+  +moving_date: Carbon|null
+  +video_url: string|null
+  +tour_url: string|null
+  +website_url: string|null
+  +live_viewing_url: string|null
+  +cover_image: int|null
+  +images: Collection DTO/Image|null
+  +documents: Collection DTO/Documenent|null
+  +agency: DTO/Agency|null
+  +reserved: boolean|null
+  +livingspace: boolean|null
+  +published: Carbon|null
+  +created: Carbon|null
+```
+
+```php
+CodebarAg\Flatfox\DTO\Attribute {
+  +name: string|null
+  +name_2: string|null
+  +street: string|null
+  +zipcode: string|null
+  +city: string|null
+  +country: string|null
+  +logo_url: string|null
+  +logo_url_org_logo_m: string|null
+```
+
+```php
+CodebarAg\Flatfox\DTO\Agency {
+  +name: string|null
+```
+
+```php
+CodebarAg\Flatfox\DTO\Image {
+  +pk: int|null
+  +caption: string|null
+  +url: string|null
+  +url_thumb_m: string|null
+  +url_listing_search: string|null
+  +search_url: string|null
+  +ordering:  int|null
+  +width: int|null
+  +height: int|null
+```
+
+```php
+CodebarAg\Flatfox\DTO\Document {
+  +pk: int|null
+  +url: string|null
+  +ordering:  int|null
+  +caption: sting|null
 ```
 
 ## 🚧 Testing
