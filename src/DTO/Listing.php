@@ -5,15 +5,16 @@ namespace CodebarAg\Flatfox\DTO;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 class Listing
 {
     public function __construct(
         public int $pk,
         public string|null $slug,
-        public string|null $url,
+        public array|null $url,
         public string|null $short_url,
-        public string|null $submit_url,
+        public array|null $submit_url,
         public string|null $status,
         public string|null $offer_type,
         public string|null $object_category,
@@ -76,12 +77,25 @@ class Listing
     {
         $endpoint = trim(config('flatfox.endpoint', 'https://flatfox.ch'), '/');
 
+        $url = $endpoint.Arr::get($data, 'url');
+        $submit_url = $endpoint.Arr::get($data, 'submit_url');
+
         return new self(
             pk: Arr::get($data, 'pk'),
             slug: Arr::get($data, 'slug'),
-            url: $endpoint.Arr::get($data, 'url'),
+            url: [
+                'de' => Str::replace('/en/', '/de/', $url),
+                'en' => $url,
+                'fr' => Str::replace('/en/', '/fr/', $url),
+                'it' => Str::replace('/en/', '/it/', $url),
+            ],
             short_url: $endpoint.Arr::get($data, 'short_url'),
-            submit_url: $endpoint.Arr::get($data, 'submit_url'),
+            submit_url: [
+                'de' => Str::replace('/en/', '/de/', $submit_url),
+                'en' => $submit_url,
+                'fr' => Str::replace('/en/', '/fr/', $submit_url),
+                'it' => Str::replace('/en/', '/it/', $submit_url),
+            ],
             status: Arr::get($data, 'status'),
             offer_type: Arr::get($data, 'offer_type'),
             object_category: Arr::get($data, 'object_category'),
