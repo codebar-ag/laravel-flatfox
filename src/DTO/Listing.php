@@ -84,7 +84,7 @@ class Listing
             pk: Arr::get($data, 'pk'),
             slug: Arr::get($data, 'slug'),
             url: [
-                'de' => Str::replace('/en/', '/de/', $url),
+                'de' => Str::replace('/en/flat/', '/de/wohnung/', $url),
                 'en' => $url,
                 'fr' => Str::replace('/en/', '/fr/', $url),
                 'it' => Str::replace('/en/', '/it/', $url),
