@@ -9,7 +9,5 @@ it('get public listing', function () {
     $response = $request->send();
     expect($response->status())->toBe(200)
         ->and($response->dto())->not()->toBeEmpty();
-
-    ray($response->dto()->results->first());
 })
     ->group('get', 'public-listing');
