@@ -7,7 +7,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Saloon\Contracts\Response;
 
-class PublicListing
+final class PublicListing
 {
     public function __construct(
         public int $count,
