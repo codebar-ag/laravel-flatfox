@@ -21,7 +21,7 @@ final class PublicListing
     {
         $data = $response->json();
 
-        return new static(
+        return new self(
             Arr::get($data, 'count'),
             Arr::get($data, 'next'),
             Arr::get($data, 'previous'),
