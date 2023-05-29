@@ -1,3 +1,9 @@
+## Usage
+
+```php
+    $request = new GetPublicListing(142, '&expand=documents&expand=images');
+    $response = $request->send();
+```
 
 ## 🚧 Testing
 

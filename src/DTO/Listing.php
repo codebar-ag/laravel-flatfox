@@ -74,13 +74,14 @@ class Listing
 
     public static function fromJson(array $data): self
     {
+        $endpoint = trim(config('flatfox.endpoint', 'https://flatfox.ch'), '/');
 
         return new self(
             pk: Arr::get($data, 'pk'),
             slug: Arr::get($data, 'slug'),
-            url: Arr::get($data, 'url'),
-            short_url: Arr::get($data, 'short_url'),
-            submit_url: Arr::get($data, 'submit_url'),
+            url: $endpoint.Arr::get($data, 'url'),
+            short_url: $endpoint.Arr::get($data, 'short_url'),
+            submit_url: $endpoint.Arr::get($data, 'submit_url'),
             status: Arr::get($data, 'status'),
             offer_type: Arr::get($data, 'offer_type'),
             object_category: Arr::get($data, 'object_category'),
@@ -122,6 +123,7 @@ class Listing
             year_built: Arr::get($data, 'year_built'),
             year_renovated: Arr::get($data, 'year_renovated'),
             moving_date_type: Arr::get($data, 'moving_date_type'),
+            moving_date: Arr::get($data, 'moving_date') ? Carbon::parse(Arr::get($data, 'moving_date')) : null,
             video_url: Arr::get($data, 'video_url'),
             tour_url: Arr::get($data, 'tour_url'),
             website_url: Arr::get($data, 'website_url'),
@@ -133,7 +135,6 @@ class Listing
             reserved: Arr::get($data, 'reserved'),
             rent_title: Arr::get($data, 'rent_title'),
             livingspace: Arr::get($data, 'livingspace'),
-            moving_date: Arr::get($data, 'moving_date') ? Carbon::parse(Arr::get($data, 'moving_date')) : null,
             published: Arr::get($data, 'published') ? Carbon::parse(Arr::get($data, 'published')) : null,
             created: Arr::get($data, 'created') ? Carbon::parse(Arr::get($data, 'created')) : null,
         );

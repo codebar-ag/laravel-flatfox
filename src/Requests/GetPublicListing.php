@@ -10,9 +10,9 @@ use Saloon\CachePlugin\Drivers\LaravelCacheDriver;
 use Saloon\CachePlugin\Traits\HasCaching;
 use Saloon\Contracts\Response;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Saloon\Http\SoloRequest;
 
-class GetPublicListing extends Request implements Cacheable
+class GetPublicListing extends SoloRequest implements Cacheable
 {
     use HasCaching;
 
@@ -20,12 +20,14 @@ class GetPublicListing extends Request implements Cacheable
 
     public function resolveEndpoint(): string
     {
-        return "/public-listing/?organization={$this->identifier}{$this->expand}";
+        $endpoint = trim(config('flatfox.endpoint', 'https://flatfox.ch'), '/');
+
+        return "$endpoint/api/v1/public-listing/?organization={$this->identifier}{$this->expand}";
     }
 
     public function __construct(
         protected string $identifier,
-        protected string $expand,
+        protected string|null $expand = null,
     ) {
     }
 

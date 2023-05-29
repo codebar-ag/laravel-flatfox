@@ -16,9 +16,11 @@ class Document
 
     public static function fromJson(array $data): self
     {
+        $endpoint = trim(config('flatfox.endpoint', 'https://flatfox.ch'), '/');
+
         return new self(
             pk: Arr::get($data, 'pk'),
-            url: Arr::get($data, 'url'),
+            url: $endpoint.Arr::get($data, 'url'),
             ordering: Arr::get($data, 'ordering'),
             caption: Arr::get($data, 'caption'),
         );

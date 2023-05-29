@@ -21,13 +21,15 @@ class Image
 
     public static function fromJson(array $data): self
     {
+        $endpoint = trim(config('flatfox.endpoint', 'https://flatfox.ch'), '/');
+
         return new self(
             pk: Arr::get($data, 'pk'),
             caption: Arr::get($data, 'caption'),
-            url: Arr::get($data, 'url'),
-            url_thumb_m: Arr::get($data, 'url_thumb_m'),
-            url_listing_search: Arr::get($data, 'url_listing_search'),
-            search_url: Arr::get($data, 'search_url'),
+            url: $endpoint.Arr::get($data, 'url'),
+            url_thumb_m: $endpoint.Arr::get($data, 'url_thumb_m'),
+            url_listing_search: $endpoint.Arr::get($data, 'url_listing_search'),
+            search_url: $endpoint.Arr::get($data, 'search_url'),
             ordering: Arr::get($data, 'ordering'),
             width: Arr::get($data, 'width'),
             height: Arr::get($data, 'height'),
