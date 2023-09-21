@@ -7,7 +7,7 @@ use Illuminate\Support\Arr;
 class Attribute
 {
     public function __construct(
-        public string|null $name,
+        public ?string $name,
     ) {
     }
 

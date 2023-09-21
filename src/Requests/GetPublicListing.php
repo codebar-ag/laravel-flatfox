@@ -27,7 +27,7 @@ class GetPublicListing extends SoloRequest implements Cacheable
 
     public function __construct(
         protected string $identifier,
-        protected string|null $expand = null,
+        protected ?string $expand = null,
     ) {
     }
 
@@ -47,7 +47,7 @@ class GetPublicListing extends SoloRequest implements Cacheable
     protected function defaultConfig(): array
     {
         return [
-            'timeout' => config('flatfox.caching', 15),
+            'timeout' => config('flatfox.timeout', 15),
         ];
     }
 

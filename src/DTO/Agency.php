@@ -7,14 +7,14 @@ use Illuminate\Support\Arr;
 class Agency
 {
     public function __construct(
-        public string|null $name,
-        public string|null $name_2,
-        public string|null $street,
-        public string|null $zipcode,
-        public string|null $city,
-        public string|null $country,
-        public string|null $logo_url,
-        public string|null $logo_url_org_logo_m,
+        public ?string $name,
+        public ?string $name_2,
+        public ?string $street,
+        public ?string $zipcode,
+        public ?string $city,
+        public ?string $country,
+        public ?string $logo_url,
+        public ?string $logo_url_org_logo_m,
     ) {
     }
 

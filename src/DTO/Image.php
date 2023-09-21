@@ -7,15 +7,15 @@ use Illuminate\Support\Arr;
 class Image
 {
     public function __construct(
-        public int|null $pk,
-        public string|null $caption,
-        public string|null $url,
-        public string|null $url_thumb_m,
-        public string|null $url_listing_search,
-        public string|null $search_url,
-        public int|null $ordering,
-        public int|null $width,
-        public int|null $height,
+        public ?int $pk,
+        public ?string $caption,
+        public ?string $url,
+        public ?string $url_thumb_m,
+        public ?string $url_listing_search,
+        public ?string $search_url,
+        public ?int $ordering,
+        public ?int $width,
+        public ?int $height,
     ) {
     }
 
