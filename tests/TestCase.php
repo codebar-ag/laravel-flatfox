@@ -2,7 +2,7 @@
 
 namespace CodebarAg\Flatfox\Tests;
 
-use CodebarAg\Flatfox\ZendeskServiceProvider;
+use CodebarAg\Flatfox\FlatfoxServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -20,7 +20,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            ZendeskServiceProvider::class,
+            FlatfoxServiceProvider::class,
         ];
     }
 
