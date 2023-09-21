@@ -27,7 +27,7 @@ class GetPublicListing extends SoloRequest implements Cacheable
 
     public function __construct(
         protected string $identifier,
-        protected string|null $expand = null,
+        protected ?string $expand = null,
     ) {
     }
 

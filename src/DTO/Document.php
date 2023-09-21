@@ -7,10 +7,10 @@ use Illuminate\Support\Arr;
 class Document
 {
     public function __construct(
-        public int|null $pk,
-        public string|null $url,
-        public int|null $ordering,
-        public string|null $caption,
+        public ?int $pk,
+        public ?string $url,
+        public ?int $ordering,
+        public ?string $caption,
     ) {
     }
 

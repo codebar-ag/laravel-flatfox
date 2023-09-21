@@ -11,9 +11,9 @@ final class PublicListing
 {
     public function __construct(
         public int $count,
-        public string|null $next,
-        public string|null $previous,
-        public Collection|null $results,
+        public ?string $next,
+        public ?string $previous,
+        public ?Collection $results,
     ) {
     }
 

@@ -47,9 +47,7 @@ jobs:
       - name: Execute tests
         run: vendor/bin/pest
         env:
-          ZAMMAD_URL: ${{ secrets.ZAMMAD_URL }}
-          ZAMMAD_TOKEN: ${{ secrets.ZAMMAD_TOKEN }}
-          ZAMMAD_OBJECT_REFERENCE_ERROR_IGNORE: true
+          FLATFOX_TOKEN: ${{ secrets.FLATFOX_TOKEN }}
 
       - name: Store test reports
         uses: actions/upload-artifact@v2
