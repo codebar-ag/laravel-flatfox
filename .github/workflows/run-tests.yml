@@ -11,13 +11,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
+      max-parallel: 1
       matrix:
-        # os: [ ubuntu-latest, windows-latest ]
-        os: [ ubuntu-latest ]
+        os: [ ubuntu-latest, windows-latest ]
         php: [ 8.2 ]
         laravel: [ 10.* ]
-        #stability: [ prefer-lowest, prefer-stable ]
-        stability: [ prefer-stable ]
+        stability: [ prefer-lowest, prefer-stable ]
         include:
           - laravel: 10.*
             testbench: 8.*
