@@ -65,10 +65,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CodebarAg\\Flatfox\\FlatfoxServiceProvider"
+              "ZendeskServiceProvider"
             ],
             "aliases": {
-                "Flatfox": "CodebarAg\\Flatfox\\Facades\\Flatfox"
+                "Flatfox": "Zendesk"
             }
         }
     },
