@@ -47,7 +47,7 @@ class GetPublicListing extends SoloRequest implements Cacheable
     protected function defaultConfig(): array
     {
         return [
-            'timeout' => config('flatfox.caching', 15),
+            'timeout' => config('flatfox.timeout', 15),
         ];
     }
 
