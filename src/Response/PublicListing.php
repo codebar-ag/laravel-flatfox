@@ -5,7 +5,7 @@ namespace CodebarAg\Flatfox\Response;
 use CodebarAg\Flatfox\DTO\Listing;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 final class PublicListing
 {
