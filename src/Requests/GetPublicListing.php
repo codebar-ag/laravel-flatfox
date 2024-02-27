@@ -26,7 +26,11 @@ class GetPublicListing extends SoloRequest implements Cacheable
 
         $expand = implode(',', $this->expand);
 
-        return "$endpoint/api/v1/public-listing/?organization={$this->identifier}&expand={$expand}";
+        return sprintf('%s/api/v1/public-listing/?organization=%s&expand=%s',
+            $endpoint,
+            urlencode($this->identifier),
+            urlencode($expand)
+        );
     }
 
     public function __construct(
