@@ -12,7 +12,7 @@ it('get public listing', function () {
         GetPublicListing::class => MockResponse::fixture('get-public-listing-request'),
     ]);
 
-    $request = new GetPublicListing(142, '&expand=documents&expand=images');
+    $request = new GetPublicListing(identifier: 142);
     $request->withMockClient($mockClient);
 
     $response = $request->send();
@@ -21,5 +21,4 @@ it('get public listing', function () {
 
     expect($response->status())->toBe(200)
         ->and($response->dto())->not()->toBeEmpty();
-})
-    ->group('get', 'public-listing');
+})->group('get', 'public-listing');

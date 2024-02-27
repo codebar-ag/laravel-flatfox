@@ -8,8 +8,8 @@ use Saloon\CachePlugin\Contracts\Cacheable;
 use Saloon\CachePlugin\Contracts\Driver;
 use Saloon\CachePlugin\Drivers\LaravelCacheDriver;
 use Saloon\CachePlugin\Traits\HasCaching;
-use Saloon\Http\Response;
 use Saloon\Enums\Method;
+use Saloon\Http\Response;
 use Saloon\Http\SoloRequest;
 
 class GetPublicListing extends SoloRequest implements Cacheable
@@ -22,12 +22,18 @@ class GetPublicListing extends SoloRequest implements Cacheable
     {
         $endpoint = trim(config('flatfox.endpoint', 'https://flatfox.ch'), '/');
 
-        return "$endpoint/api/v1/public-listing/?organization={$this->identifier}{$this->expand}";
+        $this->expand = array_merge($this->expand, ['documents', 'images']);
+
+        return sprintf('%s/api/v1/public-listing/?organization=%s&expand=%s',
+            $endpoint,
+            urlencode($this->identifier),
+            urlencode(implode(',', $this->expand))
+        );
     }
 
     public function __construct(
         protected string $identifier,
-        protected ?string $expand = null,
+        protected array $expand = [],
     ) {
     }
 
