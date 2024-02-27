@@ -9,7 +9,7 @@ This package was developed to give you a quick start to receive public listings 
 
 ## 💡 What is Flatfox?
 
-Flatfox is a web based portal where you can Search & advertise apartments for free.
+Flatfox is a web-based portal where you can Search & advertise apartments for free.
 
 ## 🛠 Requirements
 
@@ -28,7 +28,7 @@ composer require codebar-ag/laravel-flatfox
 ## Usage
 
 ```php
-    $request = new GetPublicListing(142, '&expand=documents&expand=images');
+    $request = new GetPublicListing(identifier: 142);
     $response = $request->send();
     
     $status = $request->status();

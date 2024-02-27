@@ -159,7 +159,6 @@ class Listing
         return collect($attributes)->map(function ($result) {
             return Attribute::fromJson($result);
         });
-
     }
 
     protected static function images(array $images): Collection
@@ -167,7 +166,6 @@ class Listing
         return collect($images)->map(function ($result) {
             return Image::fromJson($result);
         });
-
     }
 
     protected static function documents(array $documents): Collection
@@ -175,6 +173,5 @@ class Listing
         return collect($documents)->map(function ($result) {
             return Document::fromJson($result);
         });
-
     }
 }
