@@ -24,12 +24,10 @@ class GetPublicListing extends SoloRequest implements Cacheable
 
         $this->expand = array_merge($this->expand, ['documents', 'images']);
 
-        $expand = implode(',', $this->expand);
-
         return sprintf('%s/api/v1/public-listing/?organization=%s&expand=%s',
             $endpoint,
             urlencode($this->identifier),
-            urlencode($expand)
+            urlencode(implode(',', $this->expand))
         );
     }
 
