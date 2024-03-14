@@ -20,7 +20,7 @@
     "require": {
         "php": "^8.2",
         "guzzlehttp/guzzle": "^7.8",
-        "illuminate/contracts": "^10.0",
+        "illuminate/contracts": "^11.0",
         "saloonphp/laravel-plugin": "^3.2",
         "saloonphp/saloon": "^3.4",
         "saloonphp/cache-plugin": "^3.0",
@@ -28,10 +28,10 @@
     },
     "require-dev": {
         "laravel/pint": "^1.13",
-        "nunomaduro/collision": "^7.10",
-        "nunomaduro/larastan": "^2.8",
+        "nunomaduro/collision": "^8.1",
+        "larastan/larastan": "^2.8",
         "pestphp/pest": "^2.31",
-        "orchestra/testbench": "^8.20",
+        "orchestra/testbench": "^9.0",
         "pestphp/pest-plugin-laravel": "^2.2",
         "pestphp/pest-plugin-arch": "^2.6",
         "phpstan/extension-installer": "^1.3",
