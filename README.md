@@ -1,9 +1,9 @@
 <img src="https://banners.beyondco.de/Laravel%20Flatfox.png?theme=light&packageManager=composer+require&packageName=codebar-ag%2Flaravel-flatfox&pattern=circuitBoard&style=style_2&description=A+Laravel+Flatfox+integration+to+receive+public+listings.&md=1&showWatermark=1&fontSize=150px&images=home&widths=500&heights=500">
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/laravel-flatfox.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-flatfox)
+[![GitHub-Tests](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/run-tests.yml)
+[![GitHub Code Style](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/fix-php-code-style-issues.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-flatfox.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-flatfox)
-[![run-tests](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/run-tests.yml/badge.svg)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/run-tests.yml)
-[![PHPStan](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/phpstan.yml/badge.svg)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/phpstan.yml)
 
 This package was developed to give you a quick start to receive public listings from the Flatfox API.
 
@@ -13,9 +13,11 @@ Flatfox is a web-based portal where you can Search & advertise apartments for fr
 
 ## 🛠 Requirements
 
-| Package 	 | PHP 	 | Laravel 	      | Flatfox 	 |
-|-----------|-------|----------------|-----------|
-| >v1.0     | >8.2  | > Laravel 10.0 | ✅         |
+| Package 	 | PHP 	       | Laravel 	 | Flatfox 	 |
+|-----------|-------------|-----------|-----------|
+| v12.0.0   | ^8.2 - ^8.4 | 12.x      | ✅         |
+| v11.0.0   | ^8.2        | 11.x      | ✅         |
+| v1.0.0    | ^8.2        | 10.x      | ✅         |
 
 ## ⚙️ Installation
 
