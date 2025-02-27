@@ -15,8 +15,7 @@ class Agency
         public ?string $country,
         public ?string $logo_url,
         public ?string $logo_url_org_logo_m,
-    ) {
-    }
+    ) {}
 
     public static function fromJson(array $data): self
     {
