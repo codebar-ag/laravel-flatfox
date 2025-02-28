@@ -8,8 +8,7 @@ class Attribute
 {
     public function __construct(
         public ?string $name,
-    ) {
-    }
+    ) {}
 
     public static function fromJson(array $data): self
     {

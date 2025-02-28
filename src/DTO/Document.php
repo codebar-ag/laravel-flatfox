@@ -11,8 +11,7 @@ class Document
         public ?string $url,
         public ?int $ordering,
         public ?string $caption,
-    ) {
-    }
+    ) {}
 
     public static function fromJson(array $data): self
     {

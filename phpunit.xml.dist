@@ -20,6 +20,12 @@
         <junit outputFile="build/report.junit.xml"/>
     </logging>
     <php>
+        <env name="APP_KEY" value="base64:F+mHMDBbavrsp/I3WYA5lDSwDJJI/0wQG4eM3csq/lo="/>
         <env name="FLATFOX_TOKEN" value="token"/>
     </php>
+    <source>
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </source>
 </phpunit>

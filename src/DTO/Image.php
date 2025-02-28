@@ -16,8 +16,7 @@ class Image
         public ?int $ordering,
         public ?int $width,
         public ?int $height,
-    ) {
-    }
+    ) {}
 
     public static function fromJson(array $data): self
     {
