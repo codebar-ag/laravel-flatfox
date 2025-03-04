@@ -34,8 +34,7 @@ class GetPublicListing extends SoloRequest implements Cacheable
     public function __construct(
         protected string $identifier,
         protected array $expand = [],
-    ) {
-    }
+    ) {}
 
     protected function defaultHeaders(): array
     {

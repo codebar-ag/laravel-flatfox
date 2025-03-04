@@ -70,8 +70,7 @@ class Listing
         public ?int $livingspace,
         public ?Carbon $published,
         public ?Carbon $created,
-    ) {
-    }
+    ) {}
 
     public static function fromJson(array $data): self
     {

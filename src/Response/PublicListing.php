@@ -14,8 +14,7 @@ final class PublicListing
         public ?string $next,
         public ?string $previous,
         public ?Collection $results,
-    ) {
-    }
+    ) {}
 
     public static function fromResponse(Response $response): self
     {
