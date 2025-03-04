@@ -1,5 +1,12 @@
 <img src="https://banners.beyondco.de/Laravel%20Flatfox.png?theme=light&packageManager=composer+require&packageName=codebar-ag%2Flaravel-flatfox&pattern=circuitBoard&style=style_2&description=A+Laravel+Flatfox+integration+to+receive+public+listings.&md=1&showWatermark=1&fontSize=150px&images=home&widths=500&heights=500">
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/laravel-flatfox.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-flatfox)
+[![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-flatfox.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-flatfox)
+[![GitHub-Tests](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/run-tests.yml)
+[![GitHub Code Style](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/fix-php-code-style-issues.yml)
+[![PHPStan](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/phpstan.yml/badge.svg)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/phpstan.yml)
+[![Dependency Review](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/codebar-ag/laravel-flatfox/actions/workflows/dependency-review.yml)
+
 This package was developed to give you a quick start to receive public listings from the Flatfox API.
 
 ## 💡 What is Flatfox?
